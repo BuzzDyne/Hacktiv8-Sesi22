@@ -2,9 +2,9 @@
     Done {{doneCount}} of {{todos.length}}
 </p>
 
-<app-add-todo-form 
+<app-reactive-add-todo-form 
     (newTodoEvent)="addTodo($event)">
-</app-add-todo-form>
+</app-reactive-add-todo-form>
 
 <div *ngIf="todos.length == 0">
     <p class="text-center font-weight-light">Create your first Todo now!</p>

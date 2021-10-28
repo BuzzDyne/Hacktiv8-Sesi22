@@ -1,0 +1,32 @@
+<form 
+    class="container"
+    [formGroup]="addTodoForm" 
+    (ngSubmit)="addTodo()">
+    <div class="form-group">
+        <!-- Error Alert -->
+        <div
+            *ngIf="todoName?.errors?.required"
+            class="alert alert-danger">
+            Please type something!
+        </div>
+        <div
+            *ngIf="todoName?.errors?.minlength"
+            class="alert alert-danger">
+            Name must be at least {{todoName?.errors?.minlength.requiredLength}} characters long ({{todoName?.errors?.minlength.requiredLength - todoName?.errors?.minlength.actualLength}} more).
+        </div>
+        <label for="todoName">Todo Name</label>
+        <input
+            id="todoName"
+            name="todoName"
+            (change)="onTodoNameBoxChange()"
+            type="text" 
+            class="form-control"
+            formControlName="todoName"
+            required>
+    </div>
+
+    <input 
+        [disabled]="!addTodoForm.valid" 
+        type="submit" value="Add"
+        class="btn btn-success col-12">
+</form>

@@ -28,7 +28,7 @@ export class TodoListComponent implements OnInit, DoCheck {
       {
         content: 'Second Tasks',
         completed: false,
-        beingEdit: true
+        beingEdit: false
       },
       {
         content: 'Last Task',
