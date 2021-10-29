@@ -14,7 +14,8 @@ export class ReactiveAddTodoFormComponent {
   addTodoForm = new FormGroup({
     todoName: new FormControl('', [
       Validators.required,
-      Validators.minLength(8)
+      Validators.minLength(8),
+      Validators.pattern('[A-Za-z][A-Za-z0-9]*')
     ])
   })
 
