@@ -15,7 +15,7 @@ export class ReactiveAddTodoFormComponent {
     todoName: new FormControl('', [
       Validators.required,
       Validators.minLength(8),
-      Validators.pattern('[A-Za-z][A-Za-z0-9]*')
+      Validators.pattern('[A-Za-z][A-Za-z0-9 ]*')
     ])
   })
 
