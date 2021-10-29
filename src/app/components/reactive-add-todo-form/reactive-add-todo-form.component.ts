@@ -22,10 +22,6 @@ export class ReactiveAddTodoFormComponent {
     return this.addTodoForm.get('todoName')
   }
 
-  onTodoNameBoxChange() {
-    console.log("Being Changed");
-  }
-
   addTodo() {
     const todo: Todo = {
       content: this.addTodoForm.get('todoName')?.value,
@@ -35,6 +31,7 @@ export class ReactiveAddTodoFormComponent {
 
     this.newTodoEvent.emit(todo)
     // Reset Form
+    this.addTodoForm.reset()
   }
 
 }

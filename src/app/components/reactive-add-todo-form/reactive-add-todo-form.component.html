@@ -5,7 +5,7 @@
     <div class="form-group">
         <!-- Error Alert -->
         <div
-            *ngIf="todoName?.errors?.required"
+            *ngIf="todoName?.dirty && todoName?.errors?.required"
             class="alert alert-danger">
             Please type something!
         </div>
@@ -18,7 +18,6 @@
         <input
             id="todoName"
             name="todoName"
-            (change)="onTodoNameBoxChange()"
             type="text" 
             class="form-control"
             formControlName="todoName"
