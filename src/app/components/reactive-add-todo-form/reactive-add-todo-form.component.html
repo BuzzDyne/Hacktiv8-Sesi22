@@ -16,7 +16,7 @@
         <div
             *ngIf="todoName?.dirty && todoName?.errors?.pattern"
             class="alert alert-danger">
-            First character cannot be number.
+            First character cannot be number. (Must not have symbols)
         </div>
         <div
             *ngIf="todoName?.dirty && todoName?.errors?.required"
